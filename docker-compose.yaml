@@ -1,0 +1,12 @@
+version: "3"
+services:
+  botlc:
+    image: botlc_v1:5
+    restart: always
+    container_name: botlc
+    ports:
+      - 9000:80
+    volumes:
+      - ../assets:/var/www/html/assets
+
+

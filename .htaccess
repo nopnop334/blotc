@@ -1,0 +1,18 @@
+<IfModule mod_headers.c>
+    Header always set Access-Control-Allow-Origin "*"
+    Header always set Access-Control-Allow-Methods "GET, POST, PATCH, PUT, DELETE, OPTIONS" 
+    Header always set Access-Control-Allow-Headers "Content-Type, platform, token"
+</IfModule>
+
+<IfModule mod_rewrite.c>
+Options -Indexes
+RewriteEngine On
+RewriteBase /
+
+RewriteRule ^home/$ home.php
+RewriteRule ^home$ /home/ [R]
+
+RewriteRule ^tour/$ tour.php
+RewriteRule ^tour$ /tour/ [R]
+RewriteRule ^tour/([^/]+)/$ tour.php?scene=$1
+RewriteRule ^tour/([^/]+)$ /tour/$1/ [R]
